@@ -3,7 +3,7 @@ class Config:
     skip_rate = 2
     
     #camera setting
-    camera_source = 0 #"rtsp://hoopad:admin123@192.168.10.56:554/cam/realmonitor?channel=7&subtype=0"
+    camera_source = 0
     
     #models setting
     depth_model = "intel-isl/MiDaS"

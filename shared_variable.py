@@ -1,0 +1,2 @@
+prompt = "person"
+mode = "face"

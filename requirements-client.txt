@@ -1,0 +1,10 @@
+grpcio
+numpy
+opencv-python
+torch
+sounddevice
+pynput
+scipy
+speechrecognition
+openai-whisper
+

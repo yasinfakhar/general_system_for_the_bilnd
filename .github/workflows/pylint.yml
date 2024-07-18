@@ -16,6 +16,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-playsound
         python -m pip install --upgrade pip
         pip install pylint
         pip install -r requirements-client.txt

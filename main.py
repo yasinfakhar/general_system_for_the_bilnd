@@ -1,7 +1,7 @@
-import time
+import numpy as np
 
 import cv2
-import numpy as np
+import time
 
 from config import Config
 from modules.age_classification import get_age_cathegory

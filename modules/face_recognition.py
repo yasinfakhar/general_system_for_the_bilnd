@@ -31,18 +31,18 @@ def findCosineDistance(vector1, vector2):
     return 1 - (a/(np.sqrt(b)*np.sqrt(c)))
 
 def save_embedding(img , name):
-    
+
     faces , app = face_recognition(img)
-    
+
     if(len(faces) != 1):
         assert Exception('[ERROR] Each imgage should contain only one face')
-        
+
     face_embadding = get_embedding(img , faces[0])
-    
+
     np.save(f'embeddings/{name}.npy', face_embadding)
-    
+
 def load_embeddings():
-    
+
     embeddings = os.listdir("embeddings")
     people = {}
     for embedding in embeddings:
@@ -50,7 +50,5 @@ def load_embeddings():
         data = np.load(f'embeddings/{embedding}')
         name = embedding.split('.')[0]
         people[name] = data
-    
+
     return people
-        
-        

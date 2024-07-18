@@ -7,4 +7,3 @@ pynput
 scipy
 speechrecognition
 openai-whisper
-

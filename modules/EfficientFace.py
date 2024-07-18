@@ -197,4 +197,3 @@ class EfficientFace(nn.Module):
 def efficient_face():
     model = EfficientFace([4, 8, 4], [29, 116, 232, 464, 1024])
     return model
-

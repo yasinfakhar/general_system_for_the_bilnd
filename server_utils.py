@@ -59,7 +59,7 @@ def inference(image, mode, **kwargs):
             names.append(person_name_with_min_sim)
             age_cathegories.append(get_age_cathegory(face.age))
             emotions.append(recognize_emotion(image, face))
-        
+
         rimg = app.draw_on(image, faces, names, cos_distances,
                            age_cathegories, emotions)
         rimg = cv2.cvtColor(rimg, cv2.COLOR_RGB2BGR)

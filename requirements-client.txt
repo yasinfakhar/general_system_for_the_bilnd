@@ -2,9 +2,8 @@ grpcio
 numpy
 opencv-python
 torch
-sounddevice
+playsound==1.2.2
 pynput
 scipy
 speechrecognition
 openai-whisper
-

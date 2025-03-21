@@ -24,9 +24,9 @@ def _preporcess(image):
     return transform(image).to(device)
 
 def depth_estimation(image):
-    
+
     processed_image = _preporcess(image)
- 
+
     with torch.no_grad():
         prediction = midas(processed_image)
 
@@ -40,13 +40,12 @@ def depth_estimation(image):
     depth_map = prediction.cpu().numpy()
 
     depth_map = cv2.normalize(depth_map, None, 0, 1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_64F)
-    
+
     depth_map = (depth_map*255).astype(np.uint8)
     depth_map = cv2.applyColorMap(depth_map , cv2.COLORMAP_MAGMA)
 
     dim = (192*3, 108*4)
     image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
     depth_map = cv2.resize(depth_map, dim, interpolation=cv2.INTER_AREA)
-    
+
     return depth_map
-    

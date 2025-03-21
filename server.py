@@ -18,13 +18,13 @@ class CameraStreamServicer(camera_stream_pb2_grpc.CameraStreamServicer):
 
             frame_np = cv2.imdecode(np.frombuffer(
                 frame_bytes, np.uint8), cv2.IMREAD_COLOR)
-            
+
             try:
                 result = inference(frame_np, mode, prompt=prompt)
             except Exception as e:
                 print(f"Error: {e}")
                 continue
-            
+
             ret, encoded_frame = cv2.imencode(".jpg", result)
 
             yield camera_stream_pb2.Message(image=encoded_frame.tobytes())
